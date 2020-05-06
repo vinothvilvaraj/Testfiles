@@ -1,0 +1,139 @@
+# importing pandas as pd  
+import pandas as pd
+import random
+import csv
+from datetime import datetime
+from datetime import date
+
+mylist = ["iOS", "Andriod", "WinCE", "macOS", "Linux","Ubuntu","Chrome OS","CentOS","MS Windows","Redhat","Solaris","Unix"] 
+bt = ['Google Chrome','Mozilla Firefox','Opera Web Browser','Safari Web Browser','Internet Explorer','UC Browser','MS Edge']
+lrccode_lst = ['IND','USA','AFG','ALB','DZA','ASM','AND','AGO','AIA','ATA','ATG','ARG','ARM','ABW','AUS','AUT','AZE','BHS','BHR','BGD','BRB','BLR','BEL','BLZ','BEN','BMU','BTN']
+
+def random_date(start, end):
+    start_dt = datetime.strptime(start, '%Y-%m-%d').date().toordinal()
+    end_dt = datetime.strptime(end, '%Y-%m-%d').date().toordinal()
+    random_day = date.fromordinal(random.randint(start_dt, end_dt))
+    # print(random_day)
+    return random_day
+
+cntxt_id = []
+cntxt_type = []
+cntxt_cre_dt = []
+cntxt_cre_ts = []
+cntxt_cre_ts_epoch = []
+billing_token = []
+first_flowlogging_id = []
+last_billing_agmt_id = []
+setec_last_rcvr_id = []
+busn_name = []
+first_api_actor_id = []
+last_rcvr_cntry_code = []
+first_bn_code = []
+last_bn_code = []
+first_prod_idntfr = []
+first_integrtn_idntfr = []
+last_flow_sndr_id = []
+last_sndr_acct_cntry_code = []
+last_byr_ip_cntry_code = []
+first_chnl = []
+first_cookied_user = []
+last_mobile_os = []
+browser_type = []
+flow_first_app_int_type = []
+last_byr_ip_addr = []
+first_locale = []
+symphony_api_integrtn_type = []
+first_attmpt_intent = []
+last_attmpt_intent = []
+setec_last_pmt_actn_code = []
+last_billing_type_code = []
+first_txn_amt = []
+first_txn_curr_code = []
+xoon_y_n = []
+forced_signup_offered_y_n = []
+first_feed_name = []
+last_feed_name = []
+starts = []
+dones = []
+last_mkt_type_code = []
+eap_stream_key = []
+last_client_id = []
+last_user_guid = []
+last_chosen_fndg_optn = []
+first_pmt_flow_id = []
+last_pmt_flow_id = []
+doec_last_encrypt_txnid = []
+doec_last_decrypt_txnid = []
+last_planning_actvty_hndl = []
+last_intrnl_err_code = []
+last_intrnl_err_desc = []
+last_extl_err_code = []
+last_extl_err_desc = []
+dt = []
+hr = []
+
+for i in range(1000):
+        dt_temp = str(random_date('2019-11-01','2019-11-30'))
+        hr_temp = str(random.randint(0,23))
+        cntxt_id.append("c-"+str(i))
+        cntxt_type.append(random.choice(['Cart-ID','EC-Token']))
+        # cntxt_cre_dt.append(dt_temp)
+        # cntxt_cre_ts.append(str(dt_temp)+' '+hr_temp+":00:00")
+        # cntxt_cre_ts_epoch.append(random.uniform(1572295971.552, 1672295971.552))
+        # billing_token.append('tok')
+        # first_flowlogging_id.append('f_flw_id')
+        # last_billing_agmt_id.append('l_flw_id')
+        # setec_last_rcvr_id.append('rcvr_id')
+        # busn_name.append('bus_name')
+        # first_api_actor_id.append('f_actor_id')
+        # last_rcvr_cntry_code.append(random.choice(lrccode_lst))
+        # first_bn_code.append('first_bn')
+        # last_bn_code.append('last_bn')
+        # first_prod_idntfr.append('first_prod')
+        # first_integrtn_idntfr.append('first_integrtn')
+        # last_flow_sndr_id.append('sndr_id')
+        # last_sndr_acct_cntry_code.append(random.choice(lrccode_lst))
+        # last_byr_ip_cntry_code.append(random.choice(lrccode_lst))
+        # first_chnl.append('f_chnl')
+        # first_cookied_user.append('f_cookied')
+        # last_mobile_os.append('l_mobile')
+        # browser_type.append(random.choice(bt))
+        # flow_first_app_int_type.append('flow_first')
+        # last_byr_ip_addr.append('l_byr_ip_addr')
+        # first_locale.append('first_locale')
+        # symphony_api_integrtn_type.append('api_integr')
+        # first_attmpt_intent.append('f_attmpt_int')
+        # last_attmpt_intent.append('l_attmpt_int')
+        # setec_last_pmt_actn_code.append(10)
+        # last_billing_type_code.append(20)
+        # first_txn_amt.append(15)
+        # first_txn_curr_code.append('f_curr_code')
+        # xoon_y_n.append('xoon_y_n')
+        # forced_signup_offered_y_n.append('forced_signup')
+        # first_feed_name.append('f_feed_name')
+        # last_feed_name.append('l_feed_name')
+        # starts.append(random.randint(1,1000))
+        # dones.append(random.randint(1,1000))
+        # last_mkt_type_code.append('l_mkt_type')
+        # eap_stream_key.append(random.randint(1,1000))
+        # last_client_id.append('l_clnt_id')
+        # last_user_guid.append('l_usr_guid')  
+        # last_chosen_fndg_optn.append('l_fndg_optn')  
+        # first_pmt_flow_id.append(random.uniform(1.00, 1000.00))
+        # last_pmt_flow_id.append(random.uniform(2.00, 2000.00))
+        # doec_last_encrypt_txnid.append(random.uniform(3.00, 3000.00))
+        # doec_last_decrypt_txnid.append(random.uniform(4.00, 4000.00))
+        # last_planning_actvty_hndl.append('l_acvty_hndl')  
+        # last_intrnl_err_code.append('l_int_err_cd')  
+        # last_intrnl_err_desc.append('l_int_err_des')  
+        # last_extl_err_code.append('l_exnt_err_cd')  
+        # last_extl_err_desc.append('l_exnt_err_des') 
+        # dt.append(dt_temp)
+        # hr.append(hr_temp)
+      
+dict = {"cntxt_id":cntxt_id,"cntxt_type":cntxt_type,"cntxt_cre_dt":cntxt_cre_dt,"cntxt_cre_ts":cntxt_cre_ts,"cntxt_cre_ts_epoch":cntxt_cre_ts_epoch,"billing_token":billing_token,"first_flowlogging_id":first_flowlogging_id,"last_billing_agmt_id":last_billing_agmt_id,"setec_last_rcvr_id":setec_last_rcvr_id,"busn_name":busn_name,"first_api_actor_id":first_api_actor_id,"last_rcvr_cntry_code":last_rcvr_cntry_code,"first_bn_code":first_bn_code,"last_bn_code":last_bn_code,"first_prod_idntfr":first_prod_idntfr,"first_integrtn_idntfr":first_integrtn_idntfr,"last_flow_sndr_id":last_flow_sndr_id,"last_sndr_acct_cntry_code":last_sndr_acct_cntry_code,"last_byr_ip_cntry_code":last_byr_ip_cntry_code,"first_chnl":first_chnl,"first_cookied_user":first_cookied_user,"last_mobile_os":last_mobile_os,"browser_type":browser_type,"flow_first_app_int_type":flow_first_app_int_type,"last_byr_ip_addr":last_byr_ip_addr,"first_locale":first_locale,"symphony_api_integrtn_type":symphony_api_integrtn_type,"first_attmpt_intent":first_attmpt_intent,"last_attmpt_intent":last_attmpt_intent,"setec_last_pmt_actn_code":setec_last_pmt_actn_code,"last_billing_type_code":last_billing_type_code,"first_txn_amt":first_txn_amt,"first_txn_curr_code":first_txn_curr_code,"xoon_y_n":xoon_y_n,"forced_signup_offered_y_n":forced_signup_offered_y_n,"first_feed_name":first_feed_name,"last_feed_name":last_feed_name,"starts":starts,"dones":dones,"last_mkt_type_code":last_mkt_type_code,"eap_stream_key":eap_stream_key,"last_client_id":last_client_id,"last_user_guid":last_user_guid,"last_chosen_fndg_optn":last_chosen_fndg_optn,"first_pmt_flow_id":first_pmt_flow_id,"last_pmt_flow_id":last_pmt_flow_id,"doec_last_encrypt_txnid":doec_last_encrypt_txnid,"doec_last_decrypt_txnid":doec_last_decrypt_txnid,"last_planning_actvty_hndl":last_planning_actvty_hndl,"last_intrnl_err_code":last_intrnl_err_code,"last_intrnl_err_desc":last_intrnl_err_desc,"last_extl_err_code":last_extl_err_code,"last_extl_err_desc":last_extl_err_desc,"dt":dt,"hr":hr}
+df = pd.DataFrame(dict)
+# saving the dataframe 
+df.to_csv('C:\\Users\\Android_PC-02\\Desktop\\Python Tasks\\fact_chkout_cntxt_base_dtl_1M.csv',index=False) 
+# ,header=None
+#print(df)
